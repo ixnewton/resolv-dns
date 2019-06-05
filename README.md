@@ -5,6 +5,6 @@ The display gives output for nameservers, addresses, interfaces and finally a pi
 
 It makes use of nmcli to do the hard work and Zenity to provide a display window. Nothing too complex here.
 
-As a result the dependencies are Network Manager CLI - nmcli and Zenity both of which should be available from your distribution repositories. I have used this on both Gentoo and Arch flavours with KDE Plasma 5 desktop though it should also work for Gnome etc.
+As a result the dependencies are Network Manager CLI - nmcli and Zenity both of which should be available from your distribution repositories. ifconfig will of course be installed as standard. I have used this on both Gentoo and Arch flavours with KDE Plasma 5 desktop though it should also work for Gnome etc.
 
 Install to resolv-dns to /usr/local/bin and it should work for you.
