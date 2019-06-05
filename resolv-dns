@@ -1,0 +1,15 @@
+#!/bin/bash 
+
+_zenity="/usr/bin/zenity"
+_out="/tmp/resolv.output.$$"
+echo "Nameservers:" > ${_out}
+nmcli dev show | egrep "DNS" >>${_out}
+echo "Addresses:" >>${_out}
+nmcli dev show | egrep "ADDRESS|GATEWAY" >>${_out}
+echo "Interfaces:" >>${_out}
+ifconfig -a >>${_out}
+ping -c 3 8.8.8.8 >>${_out}
+${_zenity}  --width=800 --height=600 \
+            --title "Resolv DNS" \
+            --text-info --filename="${_out}"
+exit
